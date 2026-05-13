@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  database:
+    image: ${DOCKER_USER}/innovatech-data:latest
+    container_name: data_service
+    restart: always
+    environment:
+      - MYSQL_DATABASE=innovatech_db
+      - MYSQL_USER=innovatech_user
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_persistence:/var/lib/mysql
+    networks:
+      - data-net
+
+networks:
+  data-net:
+    driver: bridge
+
+volumes:
+  db_persistence:
