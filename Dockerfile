@@ -1,5 +1,5 @@
 FROM mysql:8.0
 RUN chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
-COPY ./Data/*.sql /docker-entrypoint-initdb.d/
+COPY ./*.sql /docker-entrypoint-initdb.d/
 USER mysql
 EXPOSE 3306
