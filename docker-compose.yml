@@ -5,7 +5,7 @@ services:
     container_name: data_service
     restart: always
     environment:
-      - MYSQL_DATABASE=innovatech_db
+      - MYSQL_DATABASE=proyecto_db
       - MYSQL_USER=innovatech_user
       - MYSQL_PASSWORD=${DB_PASSWORD}
       - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
